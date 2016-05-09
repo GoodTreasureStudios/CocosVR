@@ -14,7 +14,7 @@ This repository is a sample game showing how to run a cocos 3D game on VR platfo
 1.Clone the repo from Github
 
 ```
-$ git clone https://github.com/songchengjiang/cocosVR.git
+$ git clone https://github.com/chukong/CocosVR.git
 ```
 
 2.Update the submodule of cocosVR
@@ -23,14 +23,7 @@ $ git clone https://github.com/songchengjiang/cocosVR.git
 $ git submodule update --init
 ```
 
-3.Update the submodule of cocos2d-x
-
-```
-$ cd cocos2d
-$ git submodule update --init
-```
-
-4.After cloning the repo, please execute `download-deps.py` to download and install dependencies
+3.After cloning the repo, please execute `download-deps.py` to download and install dependencies
 
 ```
 $ cd cocos2d
@@ -39,38 +32,34 @@ $ python download-deps.py
 
 
 ##VR Platform support
-This project supports Three VR platforms: **Oculus VR**(win32), **Gear VR** and **Deepoon VR**(Samsung Note4/5 S6).
+This project supports Three VR platforms: **Oculus VR**(win32), **Gear VR** , **Deepoon VR**(Samsung Note4/5 S6) and **Cardboard VR**.
 
-###SDK Requires
-OculusVR PC **SDK V0.8**.
->Requires compile the SDK source code by VS2015 and build **/MD(release) and /MDd(debug) Runtime Library**
+>**Important**: **Gear VR** and **Deepoon VR** Requires download **oculus signature file** for your mobile device **from oculus official website**, see oculus official documentation for more information
 
-OculusVR Mobile **SDK V1.0.0.1**.
-
-Deepoon Mobile **SDK V0.1.2**.
-
-###Environment Variables
-**OVRSDKROOT:**  PATH/
-
-**OVRSDKMOBILEROOT:** PATH/
-
-**DEEPOONSDKROOT:** PATH/samples/samples/native/SDKLib/
-
-> PATH means the absolute path of SDK root directory
+##Run Demo
 
 ###win32 runtime
-Path: `cocosVR/proj.win32/cocosVR.sln`.
+Path: `cocosVR/samples/proj.win32/cocosVR.sln`.
 >Requires Visual Studio 2015 and above.
 
 ###android runtime
-Path: `cocosVR/proj.android/`.
+Path: `cocosVR/samples/proj.android/`.
 
-execute `build_native.py -V gearvr` for **Gear VR platforms**
+execute `build_native.py -V gearvr [-b release]` for **Gear VR platforms**
 
-execute `build_native.py -V deepoon` for **Deepoon VR platforms**
+execute `build_native.py -V deepoon [-b release]` for **Deepoon VR platforms**
+
+execute `build_native.py -V cardboard [-b release]` for **Cardboard VR platforms**
+
+>Suggest using release mode to build demo
+
+##Create New VR Project
+execute `createNewProject.py [-n PROJECT_NAME] [-p PROJECT_PATH]`
+
+>Building Project as mentioned above
 
 ##Credits
-* Game Effects: Jiang SongCheng
-* Game Logic: Jiang SongCheng
-* Game Sound: Jiang SongCheng
-* VR technical support: Jiang SongCheng, Xu HuaBing, etc
+* Game Effects: SongCheng Jiang
+* Game Logic: SongCheng Jiang
+* Game Sound: SongCheng Jiang
+* VR technical support: SongCheng Jiang, HuaBing Xu, etc
